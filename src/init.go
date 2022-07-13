@@ -1,7 +1,9 @@
 package src
 
 import (
-	// import some shit here.. :)
+	"errors"
+	"os"
+	"syscall"
 )
 
 var (
