@@ -14,7 +14,7 @@ var (
 	hookCreateDirFailErr = errors.New("Failed to create recursive directory .polar/hooks")
 )
 
-func Init() err {
+func Init() error {
 	args := []string{"config", "core.hooksPath", ".polar/hooks"}
 	err  := syscall.Exec("git", args, os.Environ())
 
