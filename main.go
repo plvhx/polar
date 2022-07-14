@@ -1,9 +1,12 @@
+// Copyright 2022 Paulus Gandung Prakosa <gandung@lists.infradead.org>
+// All rights reserved.
+
 package main
 
 import (
-	// import some shit here.. :)
+	"github.com/plvhx/polar-bear/cmd"
 )
 
 func main() {
-	// TODO: do some fancy shit here.. :)
+	cmd.Execute()
 }
