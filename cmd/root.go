@@ -12,7 +12,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use: "polar",
 	Short: "Git hooks made easy.",
-	Long: "polar is a tool to help you manage your git hooks."
+	Long: "polar is a tool to help you manage your git hooks.",
 }
 
 func Execute() {
