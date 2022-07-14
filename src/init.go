@@ -6,31 +6,33 @@ package src
 import (
 	"errors"
 	"os"
-	"syscall"
+	"os/exec"
 )
 
 var (
+	gitBinaryNotFoundErr = errors.New("'git' not found.")
 	hookChangeDirErr = errors.New("Failed to change git-hooks directory into .polar/hooks")
 	hookCreateDirFailErr = errors.New("Failed to create recursive directory .polar/hooks")
 )
 
 func Init() error {
-	args := []string{"config", "core.hooksPath", ".polar/hooks"}
-	err  := syscall.Exec("git", args, os.Environ())
+	path, err := exec.LookPath("git")
 
 	if err != nil {
-		return hookChangeDirErr
+		return gitBinaryNotFoundErr
 	}
 
-	_, err = os.Stat(".polar")
+	cmd := exec.Command(path, "config", "core.hooksPath", ".polar/hooks")
 
-	if err == nil {
-		return nil
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Env = os.Environ()
+
+	if err := cmd.Run(); err != nil {
+		return err
 	}
 
-	err = os.MkdirAll(".polar/hooks", 0775)
-
-	if err != nil {
+	if err := os.MkdirAll(".polar/hooks", 0775); err != nil && !os.IsExist(err) {
 		return hookCreateDirFailErr
 	}
 
