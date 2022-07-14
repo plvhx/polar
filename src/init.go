@@ -11,7 +11,7 @@ import (
 
 var (
 	gitBinaryNotFoundErr = errors.New("'git' not found.")
-	hookChangeDirErr = errors.New("Failed to change git-hooks directory into .polar/hooks")
+	hookChangeDirErr     = errors.New("Failed to change git-hooks directory into .polar/hooks")
 	hookCreateDirFailErr = errors.New("Failed to create recursive directory .polar/hooks")
 )
 
@@ -38,7 +38,7 @@ func Init() error {
 		return err
 	}
 
-	if err := os.MkdirAll(dir + "/.polar/hooks", 0775); err != nil && !os.IsExist(err) {
+	if err := os.MkdirAll(dir+"/.polar/hooks", 0775); err != nil && !os.IsExist(err) {
 		return hookCreateDirFailErr
 	}
 

@@ -26,10 +26,10 @@ var addFunc = func(cmd *cobra.Command, args []string) {
 }
 
 var addCmd = &cobra.Command{
-	Use: "add",
+	Use:   "add",
 	Short: "Adds a new hook",
-	Long: "Adds a new hook to polar and installs it.",
-	Args: cobra.ExactArgs(2),
+	Long:  "Adds a new hook to polar and installs it.",
+	Args:  cobra.ExactArgs(2),
 	Example: `polar add pre-commit "
 echo 'this is will run at pre-commit state.'
 "`,

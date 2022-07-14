@@ -23,7 +23,7 @@ func CreateHook(hook, contents string) error {
 		return err
 	}
 
-	f, err := os.OpenFile(hook, os.O_RDWR | os.O_CREATE, 0755)
+	f, err := os.OpenFile(hook, os.O_RDWR|os.O_CREATE, 0755)
 
 	if err != nil {
 		return err

@@ -15,10 +15,10 @@ var initFunc = func(cmd *cobra.Command, args []string) {
 }
 
 var initCmd = &cobra.Command{
-	Use: "init",
+	Use:   "init",
 	Short: "Initialize polar-bear",
-	Long: "polar-bear is a tool to help you manage your git hooks.",
-	Run: initFunc,
+	Long:  "polar-bear is a tool to help you manage your git hooks.",
+	Run:   initFunc,
 }
 
 func init() {
