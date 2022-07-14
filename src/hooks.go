@@ -12,7 +12,7 @@ var (
 	hookTypeErr = errors.New("Invalid hook type.")
 )
 
-func CreateHook(hook, contents string) err {
+func CreateHook(hook, contents string) error {
 	if !Validate(hook) {
 		return hookTypeErr
 	}
