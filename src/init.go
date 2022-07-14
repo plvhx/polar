@@ -32,7 +32,13 @@ func Init() error {
 		return err
 	}
 
-	if err := os.MkdirAll(".polar/hooks", 0775); err != nil && !os.IsExist(err) {
+	dir, err := os.Getwd()
+
+	if err != nil {
+		return err
+	}
+
+	if err := os.MkdirAll(dir + "/.polar/hooks", 0775); err != nil && !os.IsExist(err) {
 		return hookCreateDirFailErr
 	}
 
