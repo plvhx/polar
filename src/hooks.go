@@ -4,6 +4,7 @@
 package src
 
 import (
+	"errors"
 	"os"
 )
 
