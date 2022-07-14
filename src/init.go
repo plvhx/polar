@@ -28,7 +28,7 @@ func Init() error {
 		return nil
 	}
 
-	err = os.MkdirAll(".polar/hooks")
+	err = os.MkdirAll(".polar/hooks", 0775)
 
 	if err != nil {
 		return hookCreateDirFailErr
