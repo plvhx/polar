@@ -17,19 +17,19 @@ func CreateHook(hook, contents string) error {
 		return hookTypeErr
 	}
 
+	err := os.Chdir(".polar/hooks")
+
+	if err != nil {
+		return err
+	}
+
 	f, err := os.OpenFile(hook, os.O_RDWR | os.O_CREATE, 0755)
 
 	if err != nil {
 		return err
 	}
 
-	finfo, err := f.Stat()
-
-	if err != nil {
-		return err
-	}
-
-	if err := f.Truncate(finfo.Size()); err != nil {
+	if err := f.Truncate(0); err != nil {
 		return err
 	}
 
