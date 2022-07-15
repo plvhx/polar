@@ -4,7 +4,7 @@
 package main
 
 import (
-	"polar/cmd"
+	"github.com/plvhx/polar/cmd"
 )
 
 func main() {
