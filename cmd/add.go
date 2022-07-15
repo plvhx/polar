@@ -7,7 +7,7 @@ import (
 	"errors"
 	"os"
 
-	"github.com/plvhx/polar-bear/src"
+	"polar/src"
 	"github.com/spf13/cobra"
 )
 
