@@ -1,4 +1,4 @@
-module polar
+module github.com/plvhx/polar
 
 go 1.17
 
