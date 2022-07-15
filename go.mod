@@ -1,4 +1,4 @@
-module github.com/plvhx/polar-bear
+module polar
 
 go 1.17
 
