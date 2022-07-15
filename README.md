@@ -72,4 +72,6 @@ Learn more about git hooks from these useful resources:
 - [ Atlassian Blog on Git Hooks ](https://www.atlassian.com/git/tutorials/git-hooks)
 - [ Fei's Blog | Get Started with Git Hooks ](https://medium.com/@f3igao/get-started-with-git-hooks-5a489725c639)
 
-<div align="center">BSD-3-Clause license.</div>
+## License
+
+BSD-3-Clause
